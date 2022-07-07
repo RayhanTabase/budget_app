@@ -1,18 +1,24 @@
-<div class="">
-  <h1>Create Transaction</h1>
-  <div class="">
-    <%= form_with model: transaction, url: transactions_new_path, method: :post, local: true, scope: :transaction do |f|%>
+<div>
+  <h1>Add Transaction</h1>
+  <div>
+    <%= form_with model: transaction, url: category_transactions_path, method: :post, local: true, scope: :transaction do |f|%>
+      <select name="category[category_id]" required >
+        <% @categories.each do |category| %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+        <% end %>
+      </select>
+
       <div>
         <%= f.label :name %><br>
         <%= f.text_field :name, required: true %>
       </div>
-      
+
       <div>
         <%= f.label :amount %><br>
-        <%= f.number_field :amount, value:0, min: 0, step: 0.1%>
+        <%= f.number_field :amount, value:1, min: 0, step: 0.1, required: true %>
       </div>
       
-      <%= f.submit "Add Recipe" %>
+      <%= f.submit "Add" %>
     <% end %>
   </div>
 

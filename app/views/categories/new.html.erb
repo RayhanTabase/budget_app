@@ -1,18 +1,18 @@
 <div class="">
   <h1>Create Category</h1>
   <div class="">
-    <%= form_with model: category, url: categories_new_path, method: :post, local: true, scope: :category do |f|%>
+    <%= form_with model: category, url: categories_path, method: :post, local: true, scope: :category do |f|%>
       <div>
         <%= f.label :name %><br>
         <%= f.text_field :name, required: true %>
       </div>
 
       <div>
-        <%= f.label :image %><br>
-        <%= f.text_field :image %>
+        <%= f.label :icon_url %><br>
+        <%= f.text_field :icon %>
       </div>
       
-      <%= f.submit "Add Recipe" %>
+      <%= f.submit "Add" %>
     <% end %>
   </div>
 

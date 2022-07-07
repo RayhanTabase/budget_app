@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_up_path_for(_resource)
-    categories_index_path
+    categories_path
+  end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to categories_path, alert: exception.message
   end
 end

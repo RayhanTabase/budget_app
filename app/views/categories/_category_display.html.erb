@@ -1,0 +1,17 @@
+<div>
+ <a href="<%= category_transactions_path(category) %>">
+    <div>
+      <% if category.icon %>
+        <%= image_tag category.icon %>
+      <% end %>
+    </div>
+    <div>
+        <h3>
+          <%= category.name %>
+        </h3>
+      <p>
+        Total: <%= category.total_transactions %>
+      </p>
+    </div>
+  </a>
+</div>

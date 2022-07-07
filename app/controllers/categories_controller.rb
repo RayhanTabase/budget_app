@@ -2,10 +2,6 @@ class CategoriesController < ApplicationController
   def index
     @categories = current_user.groups
   end
-
-  def show
-    @category = Group.find(params[:id])
-  end
   
   def new
     category = Group.new
@@ -15,14 +11,13 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    recipe = current_user.groups.new(category_params)
+    category = current_user.groups.new(category_params)
     respond_to do |format|
       format.html do
-        if recipe.save
-          flash[:notice] = 'Created Successfully'
-          redirect_to categories_index_path
+        if category.save
+          redirect_to categories_path, flash: { alert: 'Created successfully' }
         else
-          flash[:notice] = 'Error occcured, Please check values'
+          render :new, locals: { category: category }, flash: { alert: 'Error occured' }
         end
       end
     end
