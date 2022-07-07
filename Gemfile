@@ -52,6 +52,8 @@ gem 'devise'
 
 gem 'cancancan'
 
+gem 'tailwindcss-rails'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
