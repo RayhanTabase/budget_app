@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+ *= require font-awesome
+ */
+
+input {
+  width: 100%;
+  border: none;
+}
