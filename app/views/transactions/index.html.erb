@@ -1,15 +1,24 @@
-<div class="bg-main flex items-center justify-between p-4 mb-5 text-white">
+<div class="bg-main flex items-center justify-between p-4 text-white">
   <%= render "layouts/home_button" %>
   <h2>TRANSACTIONS</h2>
   <%= link_to 'Logout', destroy_user_session_path, class: "text-sm" %>
 </div>
 
-<div>
-  <%= @category.name %>
-  <%= @category.total_transactions %>
+<div class="bg-white flex justify-between items-center p-2 mb-5 text-text" >
+  <div class="w-[35%] flex flex-col gap-2">
+    <% if @category.icon %>
+      <img class="object-contain w-8" src="<%= @category.icon %>" alt=<%= @category.name %> onerror="this.onerror=null;this.src='https://img.favpng.com/23/20/7/computer-icons-information-png-favpng-g8DtjAPPNhyaU9EdjHQJRnV97.jpg';"  />
+    <% end %>
+    <p>
+      <%= @category.name %>
+    </p>
+  </div>
+  <p class="font-black">
+    $ <%= @category.total_transactions %>
+  </p>
 </div>
 
-<div>
+<div class="flex flex-col gap-4 items-center">
   <% @category.entities.each do |transaction| %>
     <%= render "transactions/transaction_display", transaction: transaction %>
   <% end %>

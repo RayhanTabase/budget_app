@@ -1,27 +1,21 @@
 <div>
-<a href="<%= category_transactions_path(@category_id) %>">
-<-
-</a>
-  <h1>Add Transaction</h1>
-  <div>
-    <%= form_with model: transaction, url: category_transactions_path, method: :post, local: true, scope: :transaction do |f|%>
-      <div>
-        <%= f.label :name %><br>
-        <%= f.text_field :name, required: true %>
+  <%= form_with model: transaction, url: category_transactions_path, method: :post, local: true, scope: :transaction do |f|%>
+    <div class="bg-main flex items-center justify-between p-4 mb-5 text-white">
+      <a href="<%= category_transactions_path(@category_id) %>">
+        <i class="fa fa-chevron-left"></i>
+      </a>
+      <h2>New Transaction</h2>
+      <div class="actions">
+        <%= f.submit "Next" %>
       </div>
-
+    </div>
+    <div class="bg-white divide-y divide-slate-200 text-text">
       <div>
-        <%= f.label :amount %><br>
-        <%= f.number_field :amount, value:1, min: 0, step: 0.01, required: true %>
+        <%= f.text_field :name, placeholder: "Name", required: true %>
       </div>
-      
-      <%= f.submit "Add" %>
-    <% end %>
-  </div>
-
-  <% flash.each do |type, msg| %>
-    <div>
-      <%= msg %>
+      <div>
+        <%= f.number_field :amount, placeholder: "Amount", min: 0, step: 0.01, required: true %>
+      </div>
     </div>
   <% end %>
 </div>

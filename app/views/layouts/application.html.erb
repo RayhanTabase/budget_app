@@ -16,9 +16,14 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="flex flex-col h-screen bg-gray">
+      <% flash.each do |type, msg| %>
+        <div class="bg-second flex flex-col p-1 w-[100%]">
+          <div>
+            <%= msg %>
+          </div>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>

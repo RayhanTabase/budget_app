@@ -1,11 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "Homes", type: :request do
-  describe "GET /index" do
-    it "returns http success" do
-      get "/home/index"
-      expect(response).to have_http_status(:success)
+RSpec.describe 'Categories', type: :feature do
+  describe 'Categories' do
+    scenario 'I see the splash page' do
+      visit '/'
+      expect(page).to have_content('Aposor')
+      expect(page).to have_content('LOG IN')
+      expect(page).to have_content('SIGN UP')
     end
   end
-
 end

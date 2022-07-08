@@ -10,8 +10,8 @@ RSpec.describe 'User index page', type: :feature do
       fill_in 'Full name', with: 'User'
       fill_in 'Email', with: 'user@gmail.com'
       fill_in 'Password', with: '123456'
-      click_button 'Sign up'
-
+      fill_in 'Confirm password', with: '123456'
+      click_button 'Next'
       expect(page).to have_content('Welcome! You have signed up successfully.')
     end
 
@@ -19,9 +19,9 @@ RSpec.describe 'User index page', type: :feature do
       fill_in 'Full name', with: ''
       fill_in 'Email', with: 'user@gmail.com'
       fill_in 'Password', with: '123456'
-      click_button 'Sign up'
-
-      expect(page).to have_content("Full name can't be blank")
+      fill_in 'Confirm password', with: '123456'
+      click_button 'Next'
+      expect(page).to have_content("Name can't be blank")
     end
   end
 end

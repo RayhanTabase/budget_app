@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   def index
-    @category = Group.includes(:entities).find(params[:category_id])
+    @category = Group.includes(:entities).order('entities.created_at DESC').find(params[:category_id])
   end
 
   def new
