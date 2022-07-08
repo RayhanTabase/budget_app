@@ -6,6 +6,10 @@
 - Ruby on Rails
 - Tailwind css
 
+## Demo
+[Live](https://shrouded-garden-02833.herokuapp.com/categories)
+[Presentation](https://www.loom.com/share/cdb3802b5ad34ea490e9e18dd1de60f0)
+
 ## Screenshots
 ![p1](./screenshots/s1.jpeg)
 ![p2](./screenshots/s2.jpeg)
