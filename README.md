@@ -1,9 +1,10 @@
 # budget_app
-> s about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+> Is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 ## Built with
 - Ruby
 - Ruby on Rails
+- Tailwind css
 
 ## Pre-requisites
 - Ruby
@@ -54,6 +55,13 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+# Acknowledgement
+
+- Hat tip to anyone whose code was a source of inspiration.
+- A big thanks to [microverseinc](https://github.com/microverseinc).
+- [Gregoire Vella](https://www.behance.net/gregoirevella) on Behance the author of the [original design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+
 
 ## 📝 License
 

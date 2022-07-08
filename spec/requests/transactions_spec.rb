@@ -33,7 +33,6 @@ RSpec.describe 'Expenditure', type: :feature do
       expect(page).to have_content('New Transaction')
       expect(page).to have_field('Name')
       expect(page).to have_field('Amount')
-
     end
   end
 end
