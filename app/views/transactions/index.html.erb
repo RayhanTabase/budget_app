@@ -1,18 +1,20 @@
-<%= render "layouts/home_button" %>
-<%= render "layouts/splash_button" %>
+<div class="bg-main flex items-center justify-between p-4 mb-5 text-white">
+  <%= render "layouts/home_button" %>
+  <h2>TRANSACTIONS</h2>
+  <%= link_to 'Logout', destroy_user_session_path, class: "text-sm" %>
+</div>
 
-
+<div>
   <%= @category.name %>
   <%= @category.total_transactions %>
-
-
-
-<button class="bg-main">
-  <%= link_to 'ADD TRANSACTION', new_category_transaction_path %>
-</button>
+</div>
 
 <div>
   <% @category.entities.each do |transaction| %>
-    <%= render "transaction/transaction_display", transaction: transaction %>
+    <%= render "transactions/transaction_display", transaction: transaction %>
   <% end %>
+</div>
+
+<div class="flex justify-center items-center h-20 bg-second w-[100%] fixed bottom-0">
+  <%= link_to 'ADD TRANSACTION', new_category_transaction_path, class: "text-white border h-12 w-64 flex justify-center p-2" %>
 </div>

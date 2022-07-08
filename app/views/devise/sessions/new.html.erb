@@ -1,27 +1,36 @@
-<%= render "layouts/splash_button" %>
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<% flash.each do |type, msg| %>
+  <div class="bg-second flex flex-col p-1 w-[100%]">
+    <div>
+      <%= msg %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="flex flex-col h-screen bg-gray">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="bg-main flex items-center justify-between p-4 mb-5 text-white">
+      <%= render "layouts/splash_button" %>
+      <h2>LOGIN</h2>
+      <div class="actions">
+        <%= f.submit "Log In" %>
+      </div>
+    </div>
+
+    <div class="bg-white divide-y divide-slate-200 text-text">
+      <div class="field">
+        <%= f.email_field :email, placeholder: "Email", autocomplete: :off %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, placeholder: "Password", autocomplete: :off %>
+      </div>
+
+    </div>
+  <% end %>
+  <div class="flex justify-center items-center text-text mt-5">
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "Forgot your password ?", new_password_path(resource_name) %><br />
+    <% end %>
+  </div>
+</div>
+

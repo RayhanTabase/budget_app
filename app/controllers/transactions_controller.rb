@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @categories = current_user.groups
+    @category_id = params["category_id"]
     transaction = Entity.new
     respond_to do |format|
       format.html { render :new, locals: { transaction: transaction } }
@@ -12,9 +12,7 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @categories = current_user.groups
-    category_params = params["category"]
-    @selected_category = category_params["category_id"]
+    @category_id = params["category_id"]
     @transaction = current_user.entities.new(transaction_params)
     
     respond_to do |format|
@@ -22,7 +20,7 @@ class TransactionsController < ApplicationController
         begin
           ActiveRecord::Base.transaction do
             @transaction.save!
-            @entity_groups = EntityGroup.new(entity_id: @transaction.id, group_id: @selected_category)
+            @entity_groups = EntityGroup.new(entity_id: @transaction.id, group_id: @category_id)
             @entity_groups.save!
           end
           redirect_to categories_path, flash: { alert: 'Created successfully' }
@@ -36,6 +34,6 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:category_id, :name, :amount)
+    params.require(:transaction).permit(:name, :amount)
   end
 end

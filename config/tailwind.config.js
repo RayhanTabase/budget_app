@@ -10,12 +10,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['lato', ...defaultTheme.fontFamily.sans],
+        sans: ['Proxima Nova', 'lato', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         main: '#3778c2',
         second: '#5fb523',
         text: '#434b54',
+        gray: '#f1f1f1'
       }
     },
   },

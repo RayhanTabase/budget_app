@@ -1,24 +1,29 @@
-<div class="">
-  <h1>Create Category</h1>
-  <div class="">
-    <%= form_with model: category, url: categories_path, method: :post, local: true, scope: :category do |f|%>
-      <div>
-        <%= f.label :name %><br>
-        <%= f.text_field :name, required: true %>
-      </div>
-
-      <div>
-        <%= f.label :icon_url %><br>
-        <%= f.text_field :icon %>
-      </div>
-      
-      <%= f.submit "Add" %>
-    <% end %>
-  </div>
-
-  <% flash.each do |type, msg| %>
+<% flash.each do |type, msg| %>
+  <div class="bg-second flex flex-col p-1 w-[100%]">
     <div>
       <%= msg %>
     </div>
-  <% end %>
+  </div>
+<% end %>
+
+<div class="flex flex-col h-screen bg-gray">
+    <%= form_with model: category, url: categories_path, method: :post, local: true, scope: :category do |f|%>
+      <div class="bg-main flex items-center justify-between p-4 mb-5 text-white">
+        <%= render "layouts/home_button" %>
+        <h2>New Category</h2>
+        <div class="actions">
+          <%= f.submit "Next" %>
+        </div>
+      </div>
+      <div class="bg-white divide-y divide-slate-200 text-text">
+
+        <div>
+          <%= f.text_field :name, placeholder: "Name", required: true %>
+        </div>
+
+        <div>
+          <%= f.url_field :icon, placeholder: "Icon url" %>
+        </div>
+      </div>
+    <% end %>
 </div>

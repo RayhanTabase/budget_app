@@ -1,17 +1,13 @@
-<div>
- <a href="<%= category_transactions_path(category) %>">
-    <div>
-      <% if category.icon %>
-        <%= image_tag category.icon %>
-      <% end %>
-    </div>
-    <div>
-        <h3>
-          <%= category.name %>
-        </h3>
-      <p>
-        Total: <%= category.total_transactions %>
-      </p>
-    </div>
-  </a>
-</div>
+<a href="<%= category_transactions_path(category) %>" class="flex bg-white w-[90%] h-16 items-center p-1 gap-1">
+  <div class="w-[20%]">
+    <% if category.icon %>
+      <img class="object-contain" src="<%= category.icon %>" alt=<%= category.name %> onerror="this.onerror=null;this.src='https://img.favpng.com/23/20/7/computer-icons-information-png-favpng-g8DtjAPPNhyaU9EdjHQJRnV97.jpg';"  />
+    <% end %>
+  </div>
+  <h3 class="w-[50%]">
+    <%= category.name %>
+  </h3>
+  <p class="w-[20%] text-right">
+    $ <%= category.total_transactions %>
+  </p>
+</a>
