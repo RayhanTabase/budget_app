@@ -1,8 +1,5 @@
 <div class="flex flex-col h-screen bg-gray">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="bg-second flex flex-col p-1 w-[100%]">
-      <%= render "devise/shared/error_messages", resource: resource %>
-    </div>
     <div class="bg-main flex items-center justify-between p-4 mb-5 text-white">
       <%= render "layouts/splash_button" %>
       <h2>LOGIN</h2>
