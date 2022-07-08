@@ -2,11 +2,11 @@ class CategoriesController < ApplicationController
   def index
     @categories = current_user.groups
   end
-  
+
   def new
     category = Group.new
     respond_to do |format|
-      format.html { render :new, locals: { category:category } }
+      format.html { render :new, locals: { category: category } }
     end
   end
 

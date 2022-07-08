@@ -14,11 +14,11 @@
  *= require_self
  */
 
- /*
+/*
  *= require font-awesome
  */
 
- input {
+input {
   width: 100%;
-  border:none;
- }
+  border: none;
+}

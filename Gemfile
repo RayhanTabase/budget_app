@@ -54,7 +54,7 @@ gem 'cancancan'
 
 gem 'tailwindcss-rails'
 
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
