@@ -6,6 +6,11 @@
 - Ruby on Rails
 - Tailwind css
 
+## Screenshots
+![p1](./screenshots/s1.jpeg)
+![p2](./screenshots/s2.jpeg)
+![p3](./screenshots/s3.jpeg)
+
 ## Pre-requisites
 - Ruby
 - Rails
